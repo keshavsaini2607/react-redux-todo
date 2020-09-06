@@ -68,3 +68,19 @@
 ul {
     text-decoration: none;
 }
+
+.home__logout {
+    padding-left: 3vw;
+    padding-right: 3vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    font-size: 18px;
+    border-radius: 3rem;
+    margin: 1rem;
+}
+
+.home__logout:hover {
+    background-color: #2d4f6a;
+    color: white;
+    cursor: pointer;
+}

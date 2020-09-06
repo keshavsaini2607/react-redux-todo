@@ -3,7 +3,7 @@ import AddTodo from '../containers/AddTodo'
 import VisibleTodoList from '../containers/VisibleTodoList'
 import Footer from './Footer'
 import './App.css'
-import { app } from 'firebase'
+import firebase from 'firebase'
 
 function App() {
 
@@ -21,7 +21,7 @@ function App() {
             <Footer />
             <AddTodo />
             <VisibleTodoList />
-            <button onClick={() => app.auth().signOut() } >Logout</button>
+            <button className="home__logout" onClick={() => firebase.auth().signOut() } >Logout</button>
         </div>
     )
 }

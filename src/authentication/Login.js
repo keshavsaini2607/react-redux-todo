@@ -2,6 +2,8 @@ import React, { useCallback, useContext } from 'react'
 import { withRouter, Redirect } from 'react-router'
 import app from './firebase'
 import { AuthContext } from './Auth'
+import './Style.css'
+import { Link } from 'react-router-dom'
 
 function Login({ history }) {
 
@@ -12,7 +14,7 @@ function Login({ history }) {
             await app
                 .auth()
                 .signInWithEmailAndPassword(email.value, password.value)
-            history.push("/create/todo")
+            history.push("/")
         }catch (error) {
             alert(error)
         }
@@ -22,23 +24,29 @@ function Login({ history }) {
 
     if(currentUser) 
     {
-        return <Redirect to="/create/todo" />
+        return <Redirect to="/" />
     }
+    
 
     return (
-        <div>
+        <div className="login">
             <h1>Login page</h1>
             <form onSubmit={handleLogin}>
                 <label>
                     Email
+                    <br/>
                     <input name="email" type="email" placeholder="Email" />
                 </label>
                 <label>
                     Password
+                    <br/>
                     <input name="password" type="password" placeholder="Password" />
                 </label>
 
                 <button type="submit">Log In</button>
+                <Link to="/signup">
+                    <p className="p">Dont have an account? signup</p>
+                </Link>
             </form>
         </div>
     )

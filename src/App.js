@@ -12,11 +12,11 @@ function App() {
   return (
     <AuthProvider>
       <Router>
-        <Switch>
-          <PrivateRoute exact path="/create/todo" component={AppComp} />
+        <div>
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
-        </Switch>
+          <PrivateRoute exact path="/" component={AppComp} />
+        </div>
       </Router>
     </AuthProvider>
   );

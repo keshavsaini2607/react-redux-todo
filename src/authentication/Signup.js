@@ -11,23 +11,25 @@ function Signup({ history }) {
             await app
                 .auth()
                 .createUserWithEmailAndPassword(email.value, password.value )
-            history.push("/create/todo")
+            history.push("/")
         }catch (error) {
             alert(error)
         }
     }, [history])
 
     return (
-        <div>
+        <div className="signup">
             <h1>SignUp</h1>
             <form onSubmit={handleSignup}>
                 <label>
                     Email
+                    <br/>
                     <input type="email" name="email" placeholder="Email" />
                 </label>
                 <label>
                     Password
-                    <input type="password" name="password" placeholder="...." />
+                    <br/>
+                    <input type="password" name="password" placeholder="Password" />
                 </label>
 
                 <button type="submit">Sign Up</button>
