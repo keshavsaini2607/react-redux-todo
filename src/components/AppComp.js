@@ -3,8 +3,11 @@ import AddTodo from '../containers/AddTodo'
 import VisibleTodoList from '../containers/VisibleTodoList'
 import Footer from './Footer'
 import './App.css'
+import { app } from 'firebase'
 
 function App() {
+
+
     return (
         <div className="app">
             <div className="header">
@@ -18,7 +21,7 @@ function App() {
             <Footer />
             <AddTodo />
             <VisibleTodoList />
-           
+            <button onClick={() => app.auth().signOut() } >Logout</button>
         </div>
     )
 }
